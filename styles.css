@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: url('./monbdrPIC/back.jpeg') no-repeat center center fixed;
+  background-size: contain;
+  background-color: black;
+  color: white;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.6);
+}
+
+.logo img {
+  height: 70px;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+/* MOBILE CENTER */
+.mobile-center {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.start-btn {
+  padding: 15px 30px;
+  background: #00eaff;
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* DASHBOARD */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* TABLE */
+.table-container {
+  padding: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.1);
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+th {
+  background: rgba(0,234,255,0.3);
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #00eaff;
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-center {
+    display: flex;
+  }
+
+  .dashboard {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    padding: 80px 20px;
+    z-index: 10;
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+
+  .dashboard.show {
+    display: grid;
+  }
+
+  .mobile-center.hide {
+    display: none;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+}
