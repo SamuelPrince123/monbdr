@@ -9,7 +9,7 @@
 /* BACKGROUND (FULL + NOT CUT) */
 body {
   background: url('./monbdrPIC/back.jpeg') no-repeat center center fixed;
-  background-size: contain;
+  background-size: cover;
   background-color: black;
   color: white;
 }
